@@ -1,0 +1,26 @@
+body {
+    background-image: url('../images/code-images.jpg');
+    margin-top: 100px;
+}
+
+.game {
+    padding-top: 100px;
+    margin: 0 auto;
+    width: 800px;
+    height: 600px;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.choices-container {
+    width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.code-question {
+    width: 400px;
+    margin: 0 auto;
+    text-align: left;
+}
