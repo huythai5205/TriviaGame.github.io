@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var index = 0;
+    var index = 16;
     var timer;
     var score = 0;
 
@@ -81,6 +81,10 @@ $(document).ready(function () {
         setTimeout(() => {
             pickQuestion();
         }, 5000);
+    }
+
+    function renderAnswer() {
+
     }
 
     $(document).on("click", '#submit', function () {

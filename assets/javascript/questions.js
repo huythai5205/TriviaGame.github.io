@@ -53,7 +53,7 @@ var javascriptTrivia = {
         choice2: " alert '> undefined'",
         choice3: " alert '>1'",
         choice4: " alert '>2'",
-        answer: " alert '>undefined'",
+        answer: " alert '> undefined'",
         explanation: "alert ‘>undefined’. Inner uses a variable x which is different than the outer x. The inner x is never initialized."
     },
     question4: {
@@ -78,11 +78,11 @@ var javascriptTrivia = {
     question5: {
         type: "radio",
         question: `<div class="Inside which HTML element do we put the JavaScript?</div>`,
-        choice1: " <javascript></javascript>",
-        choice2: " <script></script>",
-        choice3: " <js></js>",
-        choice4: " <scripting></scripting>",
-        answer: " <script></script>",
+        choice1: " &#60;javascript&gt;&#60;/javascript&#62;",
+        choice2: " &#60;script&#62;&#60;/script&#62;",
+        choice3: " &#60;js&#62;&#60;/js&#62;",
+        choice4: " &#60;scripting&#62;&#60;/scripting&#62;",
+        answer: " &#60;script&#62;&#60;/script&#62;",
         explanation: ""
     },
     question6: {
@@ -108,11 +108,11 @@ var javascriptTrivia = {
     question8: {
         type: "radio",
         question: `<div class="code-question">What is the correct syntax for referring to an external script called "xxx.js"?</div>`,
-        choice1: ' <script href="xxx.js"></script>',
-        choice2: ' <script name="xxx.js"></script>',
-        choice3: ' <script src="xxx.js"></script>',
-        choice4: ' <script link="xxx.js"></script>',
-        answer: '<script src="xxx.js"></script>',
+        choice1: ' &#60;script href="xxx.js"&#62;&#60;/script&#62;',
+        choice2: ' &#60;script name="xxx.js"&#62;&#60;/script&#62;;',
+        choice3: ' &#60;script src="xxx.js"&#62;&#60;/script&#62;;',
+        choice4: ' &#60;script link="xxx.js"&#62;&#60;/script&#62;;',
+        answer: ' &#60;script src="xxx.js"&#62;&#60;/script&#62;;',
         explanation: ""
     },
     question9: {
@@ -132,7 +132,7 @@ var javascriptTrivia = {
         choice2: ' function:myFunction()',
         choice3: ' function = myFunction()',
         choice4: ' function;myFunction()',
-        answer: ' function my Function()',
+        answer: ' function myFunction()',
         explanation: ''
     },
     question11: {
@@ -162,7 +162,7 @@ var javascriptTrivia = {
         choice2: ' if (i != 5)',
         choice3: ' if i <> 5',
         choice4: ' if i =! 5 then',
-        answer: ' if (i !=5)',
+        answer: ' if (i != 5)',
         explanation: ''
     },
     question14: {
@@ -172,7 +172,7 @@ var javascriptTrivia = {
         choice2: ' while (i <= 10)',
         choice3: ' while i = 1 to 10',
         choice4: ' while i = 1 - 10',
-        answer: ' while (i <=10)',
+        answer: ' while (i <= 10)',
         explanation: ''
     },
     question15: {
@@ -189,20 +189,20 @@ var javascriptTrivia = {
         type: "radio",
         question: `<div class="code-question">How can you add a comment in a JavaScript?</div>`,
         choice1: ' This is a comment',
-        choice2: ' <!--This is a comment-->',
+        choice2: ' &#60;!--This is a comment--&#62;',
         choice3: ' //This is a comment',
-        choice4: ' <comment>This is a comment</comment>',
+        choice4: ' &#60;comment&#62;This is a comment&#60;/comment&#62;',
         answer: ' //This is a comment',
         explanation: ''
     },
     question17: {
         type: "radio",
         question: `<div class="code-question">How to insert a comment that has more than one line?</div>`,
-        choice1: ' <!--This comment has more than one line-- >',
-        choice2: ' /*This comment has more than one line */',
-        choice3: '//This comment has more than one line//',
-        choice4: ' <comment>This comment has more than one line</comment>',
-        answer: ' /*This comment has more than one line */',
+        choice1: ' &#60;!--This comment has more than one line-- &#62;',
+        choice2: ' &#47;*This comment has more than one line *&#47;',
+        choice3: '&#47;&#47;This comment has more than one line&#47;&#47;',
+        choice4: ' &#60;comment&#62;This comment has more than one line&#60;&#47;comment&#62;',
+        answer: ' &#47;*This comment has more than one line *&#47;',
         explanation: ''
     },
     question18: {
