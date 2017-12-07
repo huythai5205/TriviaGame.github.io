@@ -34,7 +34,7 @@ var javascriptTrivia = {
         choice2: " alert '> undefined'",
         choice3: " alert '>1'",
         choice4: " alert '>2'",
-        answer: " alert '>2",
+        answer: " alert '>2'",
         explanation: "alert ‘>2’, because the x that inner() uses is the same x the outer() uses."
     },
     question3: {
@@ -66,9 +66,9 @@ var javascriptTrivia = {
                     &emsp; x=2;<br/>
                     return inner;<br/>
                     }<br/>
-                    outer();<br/>
+                    outer()(3);<br/>
                     </div>`,
-        choice1: " Nothing",
+        choice1: " alert '>3'",
         choice2: " alert '> undefined'",
         choice3: " alert '>1'",
         choice4: " alert '>2'",
