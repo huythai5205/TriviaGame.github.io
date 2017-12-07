@@ -1,15 +1,20 @@
 $(document).ready(function () {
-    var index = 16;
-    var timer;
-    var score = 0;
+    let index = 0;
+    let countdownTimer;
+    let score = 0;
+    let timer;
+    let transitionTimer = 5000;
+    const keys = Object.keys(javascriptTrivia);
 
     $('#startGame').click(function () {
-        pickQuestion();
+        //pickQuestion();
+        renderAnswers();
     });
 
     function renderTF(question) {
         $('.game').empty();
-        $('.game').html(`<h2>Question: ${index + 1}</h2>
+        $('.game').html(`
+        <h2>Question: ${index + 1}</h2>
         <p>${question.question}</p>
         <div class="choices-container">
             <form>
@@ -21,13 +26,15 @@ $(document).ready(function () {
                 </div>
                 <button id="submit" value="${question.answer}">Submit</button>
             </form>
-        </div>`);
+        </div>
+        `);
         setTimer();
     }
 
     function renderRadioButton(question) {
         $('.game').empty();
-        $('.game').html(`<h2>Question: ${index + 1}</h2>
+        $('.game').html(`
+        <h2>Question: ${index + 1}</h2>
         <p>${question.question}</p>
         <div class="choices-container">
             <form>
@@ -45,7 +52,8 @@ $(document).ready(function () {
                 </div>
                 <button id="submit" value="${question.answer}">Submit</button>
             </form>
-        </div>`);
+        </div>
+        `);
         setTimer();
     }
 
@@ -60,39 +68,69 @@ $(document).ready(function () {
         $('.game').empty();
         $('.game').html(`<h1>Time's up</h1>`);
         setTimeout(() => {
-
             pickQuestion();
-        }, 5000);
+        }, transitionTimer);
     }
 
     function renderAnswerWrong() {
         $('.game').empty();
-        $('.game').html(`<h1>Answer is incorrect</h1>`);
+        let randomNumber = Math.floor(Math.random() * 10);
+        $('.game').html(`
+        <h1>Answer is incorrect</h1>
+        <div class="wrong-answer-images">
+            <img src="../assets/images/wrong_answer_images/${randomNumber}.jpg">
+        </div>
+        `);
         setTimeout(() => {
-
             pickQuestion();
-        }, 5000);
+        }, transitionTimer);
     }
 
     function renderAnswerRight() {
         $('.game').empty();
-        $('.game').html(`<h1>Answer is correct</h1>`);
-
+        let randomNumber = Math.floor(Math.random() * 5);
+        $('.game').html(`
+        <h1>Answer is incorrect</h1>
+        <div class="right-answer-images">
+            <img src="../assets/images/right_answer_images/${randomNumber}.jpg">
+        </div>
+        `);
         setTimeout(() => {
             pickQuestion();
-        }, 5000);
+        }, transitionTimer);
     }
 
-    function renderAnswer() {
+    function renderAnswers() {
+        $('.game').empty();
+        $('.game').html(`
+        <h1>Questions answer</h1>
+        <p>You got ${score}/25 right</p>
+        `);
+
+        let counter = 1;
+        for (let question in javascriptTrivia) {
+            let newDiv = $('<div class="result">')
+            newDiv.html(`
+            <h4>Question ${counter}: </h4><p>${javascriptTrivia[question].question}</p>
+            <h4>Your answer : </h4><p>${javascriptTrivia[question].userAnswer}</p>
+            <h4>Answer : </h4><p>${javascriptTrivia[question].answer}</p>
+            <h4>Explanation : </h4><p>${javascriptTrivia[question].explanation}</p>
+            `);
+
+            $('.game').append(newDiv);
+            counter++;
+        }
 
     }
 
-    $(document).on("click", '#submit', function () {
+    $(document).on("click", '#submit', function (event) {
+        event.preventDefault();
         index++;
         clearTimeout(timer);
-        var value = $('input:checked').val();
-        var answer = $('#submit').val();
-        if (value === answer) {
+        let userAnswer = $('input:checked').val();
+        let answer = $('#submit').val();
+        javascriptTrivia[keys[index]].userAnswer = userAnswer;
+        if (userAnswer === answer) {
             score++;
             renderAnswerRight();
         } else {
@@ -101,9 +139,16 @@ $(document).ready(function () {
     });
 
     function pickQuestion() {
-        const keys = Object.keys(javascriptTrivia);
-        console.log(javascriptTrivia[keys[index]].answer);
-        if (javascriptTrivia[keys[index]].type === "t/f") {
+        // console.log(javascriptTrivia[keys[index]].answer);
+        if (index === keys.length) {
+            $('.game').empty();
+            $('.game').html(`
+            <h1>You're done with the trivia questions.</h1>
+            `);
+            setTimeout(() => {
+                renderAnswers();
+            }, transitionTimer);
+        } else if (javascriptTrivia[keys[index]].type === "t/f") {
             renderTF(javascriptTrivia[keys[index]]);
         } else if (javascriptTrivia[keys[index]].type === "radio") {
             renderRadioButton(javascriptTrivia[keys[index]]);

@@ -16,6 +16,7 @@ var javascriptTrivia = {
         choice3: " alert '>1'",
         choice4: " alert '>2'",
         answer: " Nothing",
+        userAnswer: "",
         explanation: "Nothing, because outer() returned a function but it wasn’t executed."
     },
     question2: {
@@ -35,6 +36,7 @@ var javascriptTrivia = {
         choice3: " alert '>1'",
         choice4: " alert '>2'",
         answer: " alert '>2'",
+        userAnswer: "",
         explanation: "alert ‘>2’, because the x that inner() uses is the same x the outer() uses."
     },
     question3: {
@@ -54,6 +56,7 @@ var javascriptTrivia = {
         choice3: " alert '>1'",
         choice4: " alert '>2'",
         answer: " alert '> undefined'",
+        userAnswer: "",
         explanation: "alert ‘>undefined’. Inner uses a variable x which is different than the outer x. The inner x is never initialized."
     },
     question4: {
@@ -73,6 +76,7 @@ var javascriptTrivia = {
         choice3: " alert '>1'",
         choice4: " alert '>2'",
         answer: " alert '>3'",
+        userAnswer: "",
         explanation: "alert '>3', 3 is pass into the inner function."
     },
     question5: {
@@ -83,6 +87,7 @@ var javascriptTrivia = {
         choice3: " &#60;js&#62;&#60;/js&#62;",
         choice4: " &#60;scripting&#62;&#60;/scripting&#62;",
         answer: " &#60;script&#62;&#60;/script&#62;",
+        userAnswer: "",
         explanation: ""
     },
     question6: {
@@ -95,6 +100,7 @@ var javascriptTrivia = {
         choice3: " document.getElementByName('p').innerHTML = 'Hello World!';",
         choice4: " #demo.innerHTML = 'Hello World!';",
         answer: " document.getElementById('demo').innerHTML = 'Hello World!';",
+        userAnswer: "",
         explanation: ""
     },
     question7: {
@@ -103,6 +109,7 @@ var javascriptTrivia = {
         choice1: " True",
         choice2: " False",
         answer: " False",
+        userAnswer: "",
         explanation: ""
     },
     question8: {
@@ -113,6 +120,7 @@ var javascriptTrivia = {
         choice3: ' &#60;script src="xxx.js"&#62;&#60;/script&#62;;',
         choice4: ' &#60;script link="xxx.js"&#62;&#60;/script&#62;;',
         answer: ' &#60;script src="xxx.js"&#62;&#60;/script&#62;;',
+        userAnswer: "",
         explanation: ""
     },
     question9: {
@@ -123,6 +131,7 @@ var javascriptTrivia = {
         choice3: ' alertBox("Hello World");',
         choice4: ' msg("Hello World");',
         answer: ' alert("Hello World");',
+        userAnswer: "",
         explanation: ''
     },
     question10: {
@@ -133,6 +142,7 @@ var javascriptTrivia = {
         choice3: ' function = myFunction()',
         choice4: ' function;myFunction()',
         answer: ' function myFunction()',
+        userAnswer: "",
         explanation: ''
     },
     question11: {
@@ -143,6 +153,7 @@ var javascriptTrivia = {
         choice3: ' call myFunction()',
         choice4: ' return myFunction()',
         answer: ' myFunction()',
+        userAnswer: "",
         explanation: ''
     },
     question12: {
@@ -153,6 +164,7 @@ var javascriptTrivia = {
         choice3: ' if i = 5',
         choice4: ' if i == 5 then',
         answer: ' if (i == 5)',
+        userAnswer: "",
         explanation: ''
     },
     question13: {
@@ -163,6 +175,7 @@ var javascriptTrivia = {
         choice3: ' if i <> 5',
         choice4: ' if i =! 5 then',
         answer: ' if (i != 5)',
+        userAnswer: "",
         explanation: ''
     },
     question14: {
@@ -173,6 +186,7 @@ var javascriptTrivia = {
         choice3: ' while i = 1 to 10',
         choice4: ' while i = 1 - 10',
         answer: ' while (i <= 10)',
+        userAnswer: "",
         explanation: ''
     },
     question15: {
@@ -183,6 +197,7 @@ var javascriptTrivia = {
         choice3: ' for (i = 0; i <= 5; i++)',
         choice4: ' for (i = 0; i <= 5)',
         answer: ' for (i = 0; i <= 5; i++)',
+        userAnswer: "",
         explanation: ''
     },
     question16: {
@@ -193,6 +208,7 @@ var javascriptTrivia = {
         choice3: ' //This is a comment',
         choice4: ' &#60;comment&#62;This is a comment&#60;/comment&#62;',
         answer: ' //This is a comment',
+        userAnswer: "",
         explanation: ''
     },
     question17: {
@@ -203,6 +219,7 @@ var javascriptTrivia = {
         choice3: '&#47;&#47;This comment has more than one line&#47;&#47;',
         choice4: ' &#60;comment&#62;This comment has more than one line&#60;&#47;comment&#62;',
         answer: ' &#47;*This comment has more than one line *&#47;',
+        userAnswer: "",
         explanation: ''
     },
     question18: {
@@ -213,6 +230,7 @@ var javascriptTrivia = {
         choice3: ' var colors = ["red", "green", "blue"]',
         choice4: ' var colors = (1:"red", 2:"green", 3:"blue")',
         answer: ' var colors = ["red", "green", "blue"]',
+        userAnswer: "",
         explanation: ''
     },
     question19: {
@@ -223,6 +241,7 @@ var javascriptTrivia = {
         choice3: ' rnd(7.25)',
         choice4: ' Math.round(7.25)',
         answer: ' Math.round(7.25)',
+        userAnswer: "",
         explanation: ''
     },
     question20: {
@@ -233,6 +252,7 @@ var javascriptTrivia = {
         choice3: ' Math.ceil(x, y)',
         choice4: ' Math.max(x, y)',
         answer: ' Math.max(x, y)',
+        userAnswer: "",
         explanation: ''
     },
     question21: {
@@ -241,6 +261,7 @@ var javascriptTrivia = {
         choice1: ' True',
         choice2: ' False',
         answer: ' False',
+        userAnswer: "",
         explanation: ''
     },
     question22: {
@@ -251,6 +272,7 @@ var javascriptTrivia = {
         choice3: ' onchange',
         choice4: ' onclick',
         answer: ' onclick',
+        userAnswer: "",
         explanation: ''
     },
     question23: {
@@ -261,6 +283,7 @@ var javascriptTrivia = {
         choice3: ' variable carName;',
         choice4: ' name carName;',
         answer: ' var carName;',
+        userAnswer: "",
         explanation: ''
     },
     question24: {
@@ -271,6 +294,7 @@ var javascriptTrivia = {
         choice3: ' ==',
         choice4: ' ===',
         answer: ' =',
+        userAnswer: "",
         explanation: ''
     },
     question25: {
@@ -281,6 +305,7 @@ var javascriptTrivia = {
         choice3: ' false',
         choice4: ' undefined',
         answer: ' true',
+        userAnswer: "",
         explanation: ''
     }
 }
