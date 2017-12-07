@@ -10,29 +10,25 @@ $(document).ready(function () {
     function renderTF(question) {
         $('.game').empty();
         $('.game').html(`<h2>Question: 1</h2>
-  <p>${question.question}</p>
-  </div>
-  <div class="choices-container">
-  <form>
-  <div class="radio">
-  <label><input type="radio" name="optradio" value="${question.choice1}">${question.choice1}</label>
-</div>
-<div class="radio">
-  <label><input type="radio" name="optradio" value="${question.choice2}">${question.choice2}</label>
-</div>
-    <button id="submit" value="${question.answer}>Submit</button>
-    </form>
-</div>`);
-        timer = setTimeout(() => {
-            renderTimesup
-        }, 100);
+        <p>${question.question}</p>
+        <div class="choices-container">
+            <form>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" value="${question.choice1}">${question.choice1}</label>
+                </div>
+                <div class="radio">
+                    <label><input type="radio" name="optradio" value="${question.choice2}">${question.choice2}</label>
+                </div>
+                <button id="submit" value="${question.answer}">Submit</button>
+            </form>
+        </div>`);
+        setTimer();
     }
 
     function renderRadioButton(question) {
         $('.game').empty();
         $('.game').html(`<h2>Question: 1</h2>
   <p>${question.question}</p>
-  </div>
   <div class="choices-container">
   <form>
   <div class="radio">
@@ -50,9 +46,13 @@ $(document).ready(function () {
 <button id="submit" value="${question.answer}">Submit</button>
 </form>
 </div>`);
+        setTimer();
+    }
+
+    function setTimer() {
         timer = setTimeout(() => {
-            renderTimesup
-        }, 100);
+            renderTimesup();
+        }, 10000);
     }
 
     function renderTimesup() {
@@ -77,12 +77,12 @@ $(document).ready(function () {
         if (value === answer) {
             score++;
             setTimeout(() => {
-                renderAnswerRight
-            }, 500);
+                renderAnswerRight();
+            }, 5000);
         } else {
             setTimeout(() => {
-                renderAnswerWrong
-            }, 500);
+                renderAnswerWrong();
+            }, 5000);
         }
     });
 

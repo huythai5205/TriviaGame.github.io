@@ -99,7 +99,7 @@ var javascriptTrivia = {
     },
     question7: {
         type: "t/f",
-        question: `<div class="code-question">The external JavaScript file must contain the <script> tag.</div>`,
+        question: `<div class="code-question">The external JavaScript file must contain the &#60;script&#62; tag.</div>`,
         choice1: " True",
         choice2: " False",
         answer: " False",
@@ -108,11 +108,11 @@ var javascriptTrivia = {
     question8: {
         type: "radio",
         question: `<div class="code-question">What is the correct syntax for referring to an external script called "xxx.js"?</div>`,
-        choice1: ' <script href="xxx.js">',
-        choice2: ' <script name="xxx.js">',
-        choice3: ' <script src="xxx.js">',
-        choice4: ' <script link="xxx.js">',
-        answer: '<script src="xxx.js"',
+        choice1: ' <script href="xxx.js"></script>',
+        choice2: ' <script name="xxx.js"></script>',
+        choice3: ' <script src="xxx.js"></script>',
+        choice4: ' <script link="xxx.js"></script>',
+        answer: '<script src="xxx.js"></script>',
         explanation: ""
     },
     question9: {
