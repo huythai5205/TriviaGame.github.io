@@ -7,8 +7,7 @@ $(document).ready(function () {
     const keys = Object.keys(javascriptTrivia);
 
     $('#startGame').click(function () {
-        //pickQuestion();
-        renderAnswers();
+        pickQuestion();
     });
 
     function renderTF(question) {
@@ -74,7 +73,7 @@ $(document).ready(function () {
 
     function renderAnswerWrong() {
         $('.game').empty();
-        let randomNumber = Math.floor(Math.random() * 10);
+        let randomNumber = Math.ceil(Math.random() * 10);
         $('.game').html(`
         <h1>Answer is incorrect</h1>
         <div class="wrong-answer-images">
@@ -88,9 +87,9 @@ $(document).ready(function () {
 
     function renderAnswerRight() {
         $('.game').empty();
-        let randomNumber = Math.floor(Math.random() * 5);
+        let randomNumber = Math.ceil(Math.random() * 5);
         $('.game').html(`
-        <h1>Answer is incorrect</h1>
+        <h1>Answer is correct</h1>
         <div class="right-answer-images">
             <img src="../assets/images/right_answer_images/${randomNumber}.jpg">
         </div>
@@ -130,7 +129,7 @@ $(document).ready(function () {
         let userAnswer = $('input:checked').val();
         let answer = $('#submit').val();
         javascriptTrivia[keys[index]].userAnswer = userAnswer;
-        if (userAnswer === answer) {
+        if (userAnswer.trim() === answer.trim()) {
             score++;
             renderAnswerRight();
         } else {
@@ -139,7 +138,6 @@ $(document).ready(function () {
     });
 
     function pickQuestion() {
-        // console.log(javascriptTrivia[keys[index]].answer);
         if (index === keys.length) {
             $('.game').empty();
             $('.game').html(`

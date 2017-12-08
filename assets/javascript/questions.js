@@ -81,7 +81,7 @@ var javascriptTrivia = {
     },
     question5: {
         type: "radio",
-        question: `<div class="Inside which HTML element do we put the JavaScript?</div>`,
+        question: `<div class="code-question">Inside which HTML element do we put the JavaScript?</div>`,
         choice1: " &#60;javascript&gt;&#60;/javascript&#62;",
         choice2: " &#60;script&#62;&#60;/script&#62;",
         choice3: " &#60;js&#62;&#60;/js&#62;",
