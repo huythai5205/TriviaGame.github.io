@@ -59,7 +59,6 @@ $(document).ready(function () {
     function setTimer() {
         timer = setTimeout(() => {
             renderTimesup();
-            index++;
         }, 10000);
     }
 
@@ -77,7 +76,7 @@ $(document).ready(function () {
         $('.game').html(`
         <h1>Answer is incorrect</h1>
         <div class="wrong-answer-images">
-            <img src="../assets/images/wrong_answer_images/${randomNumber}.jpg">
+            <img src="./assets/images/wrong_answer_images/${randomNumber}.jpg">
         </div>
         `);
         setTimeout(() => {
@@ -91,7 +90,7 @@ $(document).ready(function () {
         $('.game').html(`
         <h1>Answer is correct</h1>
         <div class="right-answer-images">
-            <img src="../assets/images/right_answer_images/${randomNumber}.jpg">
+            <img src="./assets/images/right_answer_images/${randomNumber}.jpg">
         </div>
         `);
         setTimeout(() => {
@@ -124,7 +123,6 @@ $(document).ready(function () {
 
     $(document).on("click", '#submit', function (event) {
         event.preventDefault();
-        index++;
         clearTimeout(timer);
         let userAnswer = $('input:checked').val();
         let answer = $('#submit').val();
@@ -138,7 +136,7 @@ $(document).ready(function () {
     });
 
     function pickQuestion() {
-        if (index === keys.length) {
+        if (index >= keys.length - 1) {
             $('.game').empty();
             $('.game').html(`
             <h1>You're done with the trivia questions.</h1>
@@ -151,5 +149,6 @@ $(document).ready(function () {
         } else if (javascriptTrivia[keys[index]].type === "radio") {
             renderRadioButton(javascriptTrivia[keys[index]]);
         }
+        index++;
     }
 });
