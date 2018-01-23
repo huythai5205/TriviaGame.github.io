@@ -76,7 +76,7 @@ $(document).ready(function () {
         $('.game').html(`
         <h1>Answer is incorrect</h1>
         <div class="wrong-answer-images">
-            <img src="./assets/images/wrong_answer_images/${randomNumber}.jpg">
+            <img src="assets/images/wrong_answer_images/${randomNumber}.jpg">
         </div>
         `);
         setTimeout(() => {
@@ -90,7 +90,7 @@ $(document).ready(function () {
         $('.game').html(`
         <h1>Answer is correct</h1>
         <div class="right-answer-images">
-            <img src="./assets/images/right_answer_images/${randomNumber}.jpg">
+            <img src="assets/images/right_answer_images/${randomNumber}.jpg">
         </div>
         `);
         setTimeout(() => {
